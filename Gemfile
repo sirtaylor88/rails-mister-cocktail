@@ -37,12 +37,13 @@ gem 'jbuilder', '~> 2.5'
 
 # Gemfile
 gem 'autoprefixer-rails'
+gem 'carrierwave', '~> 1.2'
 gem 'cloudinary', '~> 1.9.1'
+gem 'dotenv-rails', groups: [:development, :test]
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'nokogiri'
 gem 'select2_simple_form', github: 'lndl/select2_simple_form', tag: '0.7.3'
 gem 'simple_form'
-gem 'webpacker'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
