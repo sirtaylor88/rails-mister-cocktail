@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Gemfile
 gem 'autoprefixer-rails'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'carrierwave', '~> 1.2'
 gem 'cloudinary', '~> 1.9.1'
 gem 'dotenv-rails', groups: [:development, :test]
@@ -62,10 +63,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rspec-rails', group: [ :test ]
 gem 'rails-controller-testing', group: [ :test ]
-
-
