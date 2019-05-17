@@ -1,0 +1,41 @@
+<div class="d-flex justify-content-between" style="margin-top: 16px">
+  <div class="container">
+    <%=link_to  cocktails_path do%>
+      <h3>Cocktail Recipes</h3>
+    <%end%>
+  </div>
+  <div class="container w-50" >
+    <%= simple_form_for :search, url: cocktails_path, method: "GET", html: { class: 'form-inline'} do |f| %>
+      <%= f.input :name, label: false, input_html: {value: ""}%>
+      <%= f.submit 'Search', class: "btn btn-success" %>
+    <% end %>
+  </div>
+  <div class="container w-25">
+    <%= link_to "Add cocktail", new_cocktail_path, class: "btn btn-primary" %>
+  </div>
+</div>
+<hr>
+<div class="container">
+  <% if @search.present? %>
+  <p>You searched for <strong><%= @name %></strong> . We found <%= @cocktails.size %> cocktails out of our <%= Cocktail.count %> on our website.</p>
+  <% end %>
+  <div class="container">
+    <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-sm-6 col-md-4 col-lg-3 justify-content-around" style="position:relative">
+        <img style="width: 100%;" src=<%="#{cocktail.image_url}"%>>
+        <div class="col-12 mb-3 border text-center">
+          <div class="container text-justify my-3" style="height:240px">
+            <h4><%= cocktail.name %></h4>
+            <% desc = "#{cocktail.preparation}"  %>
+            <p><%= desc.size > 120 ? "#{desc[0..120].strip}..." : desc %></p>
+          </div>
+          <div class="container mt-3" style="position:absolute; bottom: 16px">
+            <%= link_to "More info", cocktail_path(cocktail), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
