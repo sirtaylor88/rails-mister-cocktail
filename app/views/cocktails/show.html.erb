@@ -1,4 +1,4 @@
-<div style="margin: 16px">
+<div style="margin-left: 16px">
   <%=link_to  cocktails_path do%>
     <i class="fas fa-undo-alt" style="font-size: 24px; font-weight: bold; color: #007bff">
       Back
@@ -39,6 +39,7 @@
       </table>
 
       <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <%= f.error_notification %>
         <%= f.input :ingredient_id, label:'Select an ingredient', as: :select2, collection: @ingredients %>
         <%= f.input :description, label: 'Description' %>
         <%= f.submit "Add an ingredient" %>
@@ -59,8 +60,9 @@
       </table>
 
       <%= simple_form_for [@cocktail, @review] do |f| %>
+        <%= f.error_notification %>
         <%= f.input :content, label: 'Review', error: 'Review is required' %>
-        <%= f.input :rating, label: 'Rating', input_html: { min: '0', max:'5'}  %>
+        <%= f.input :rating, as: :range, label: 'Rating', input_html: { min: '0', max:'5'}  %>
         <%= f.submit "Add a review" %>
       <% end %>
     </div>

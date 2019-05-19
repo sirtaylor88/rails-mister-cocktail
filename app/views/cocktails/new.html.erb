@@ -1,6 +1,18 @@
-<h1>Add a cocktail</h1>
-<%= simple_form_for(@cocktail) do |f| %>
-<%= f.input :name, label: 'name' %>
-<%= f.submit "Submit" %>
-<% end  %>
+<div style="margin-left: 16px">
+  <%=link_to  cocktails_path do%>
+    <i class="fas fa-undo-alt" style="font-size: 24px; font-weight: bold; color: #007bff">
+      Back
+    </i>
+  <%end%>
+</div>
+<hr>
+<div class="container w-50" style="height: 100vh">
+  <h1>Add a cocktail</h1>
+  <%= simple_form_for(@cocktail) do |f| %>
+  <%= f.input :name, label: 'Cocktail name' %>
+  <%= f.input :preparation, label: 'Preparation method' %>
+  <%= f.submit 'Submit', class: "btn btn-primary"%>
+  <% end  %>
+</div>
+
 

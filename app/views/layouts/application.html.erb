@@ -12,7 +12,8 @@
   </head>
 
   <body>
-    <%= yield %>
-    <%= javascript_include_tag "application" %>
+    <div class="wrapper" style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.9) 100%), url(<%= image_url('cocktails.jpg') %>); background-position:center; background-size: 100%; background-blend-mode: color; padding-top: 16px">
+      <%= yield %>
+    </div>
   </body>
 </html>

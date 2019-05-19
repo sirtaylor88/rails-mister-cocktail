@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
     @cocktail = Cocktail.find(params[:cocktail_id])
     @review = Review.new(review_params)
     @review.cocktail = @cocktail
-    @review.save!
+    @review.save
     redirect_to cocktail_path(@cocktail)
   end
 
